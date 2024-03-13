@@ -1,0 +1,35 @@
+Ejercicio 2.1.1 -> ✅ EJERCICIO VERIFICADO POR PROFESOR
+
+Dada una secuencia de letras del alfabeto que finaliza con una marca '*', contar cuantas letras "A" hay en la secuencia.
+
+ACCION ejer2.1.1 ES
+    AMBIENTE
+        sec: Secuencia de carácteres;
+        v: caracter;
+        contador: entero;
+    
+    PROCESO
+        ARR(sec);
+        AVZ(sec, v);
+        contador:= 0;
+        MIENTRAS (v <> "*") HACER
+            SI (v = "A") ENTONCES
+                contador:= contador + 1;
+            FS;
+            AVZ(sec, v);
+        FM;
+        ESC("La cantidad de letras A que existen en esta secuencia es: ", contador);
+        CERRAR(sec);
+    FP;
+FA;
+
+PRUEBA DE ESCRITORIO
+Suponemos que la secuencia es la siguiente:
+B | S | O | P | A | T | Y | A | *
+
+// Viene la secuencia de mem externa a interna y se posiciona en el primer elemento, en este caso el elemento "B".
+// Realiza el ciclo mientras <> *, en este caso es VERDADERO
+// Ahora realiza el ciclo condicional, en este caso es FALSO y no cuenta nada, sino que avanza
+// Y así hasta llegar a la "A" donde se suma a un contador y se sigue avanzando hasta la marca final.
+
+En total, el contador será = 2, ya que existen dos carácteres A en la secuencia y se cerrará en la marca final de la secuencia.

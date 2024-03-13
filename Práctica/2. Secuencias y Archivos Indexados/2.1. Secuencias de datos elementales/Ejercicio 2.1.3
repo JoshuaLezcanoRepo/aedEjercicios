@@ -1,0 +1,23 @@
+Ejercicio 2.1.3 -> ✅ EJERCICIO VERIFICADO POR PROFESOR
+
+Se dispone de una secuencia de caracteres y se desea obtener una secuencia de salida que resulte de copiar la secuencia de entrada, descartando el carácter "$".
+
+ACCION ejer2.1.3 ES
+    AMBIENTE
+        sec, sal: Secuencia de caracteres;
+        v: carácter;
+    
+    PROCESO
+        ARR(sec);
+        AVZ(sec, v);
+        CREAR(sal);
+        MIENTRAS NFDS(sec) HACER
+            SI (v <> "$") ENTONCES
+                GRABAR(sal, v);
+            FS;
+            AVZ(sec, v);
+        FM;
+        CERRAR(sec);
+        CERRAR(sal);
+    FP;
+FA;

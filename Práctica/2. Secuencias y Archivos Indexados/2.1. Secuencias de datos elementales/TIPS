@@ -1,0 +1,7 @@
+Las secuencias se encuentran inicialmente en MEMORIA EXTERNA (disco duro) y se guarda al finalizar el algoritmo nuevamente en MEMORIA EXTERNA (disco duro) al realizar la acción de GRABAR(sec, v);
+
+Para trabajar con secuencias, se debe de traer de MEMORIA EXTERNA a MEMORIA INTERNA (ram), con lo cuál, para realizar esa acción, utilizamos
+ARR(sec);
+
+Y al traer la secuencia de MEMORIA EXTERNA a INTERNA, debemos de ubicarnos en el primer elemento de la misma, con lo cuál utilizamos:
+AVZ(sec, v);

@@ -1,0 +1,25 @@
+Ejercicio 2.1.2 -> ✅ EJERCICIO VERIFICADO POR PROFESOR
+
+Dada una secuencia de letras del alfabeto que finaliza con la letra "Z", contar cuantas consonantes hay en la secuencia.
+
+ACCION ejer2.1.2 ES
+    AMBIENTE
+        sec: Secuencia de carácteres;
+        v: caracter;
+        vocales = {"A", "E", "I", "O", "U"};
+        contador: entero;
+
+    PROCESO
+        ARR(sec);
+        AVZ(sec, v);
+        contador:= 0;
+        /* Utilizo un REPETIR, ya que Z es una consonante y por lo tanto tengo que incluirlo y como es el elemento final de la secuencia utilizo un repetir */
+        REPETIR
+            SI (v NO EN vocales) ENTONCES
+                contador:= contador + 1;
+            FS;
+        HASTA QUE (v = "Z")
+        ESC("La cantidad de consonantes que hay en esta secuencia es: ", contador);
+        CERRAR(sec);
+    FP;
+FA;
