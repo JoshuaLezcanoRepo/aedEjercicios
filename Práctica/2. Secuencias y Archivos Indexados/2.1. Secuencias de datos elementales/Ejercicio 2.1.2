@@ -1,11 +1,13 @@
-Ejercicio 2.1.2 -> ✅ EJERCICIO VERIFICADO POR PROFESOR
+👨‍💻 Ejercicio 2.1.2 -> ✅ EJERCICIO VERIFICADO POR PROFESOR
 
-Dada una secuencia de letras del alfabeto que finaliza con la letra "Z", contar cuantas consonantes hay en la secuencia.
+📖 Enunciado: Dada una secuencia de letras del alfabeto que finaliza con la letra "Z", contar cuantas consonantes hay en la secuencia.
+
+🔗 ALGORITMO 🔗
 
 ACCION ejer2.1.2 ES
     AMBIENTE
-        sec: Secuencia de carácteres;
-        v: caracter;
+        sec: Secuencia de caracteres;
+        v: carácter;
         vocales = {"A", "E", "I", "O", "U"};
         contador: entero;
 
@@ -13,13 +15,30 @@ ACCION ejer2.1.2 ES
         ARR(sec);
         AVZ(sec, v);
         contador:= 0;
-        /* Utilizo un REPETIR, ya que Z es una consonante y por lo tanto tengo que incluirlo y como es el elemento final de la secuencia utilizo un repetir */
         REPETIR
             SI (v NO EN vocales) ENTONCES
                 contador:= contador + 1;
-            FS;
+            FS; /* Fin Si */
         HASTA QUE (v = "Z")
         ESC("La cantidad de consonantes que hay en esta secuencia es: ", contador);
         CERRAR(sec);
-    FP;
-FA;
+    FP; /* Fin Proceso */
+FA; /* Fin Accion */
+
+
+/* 💬 Explicación Algoritmo Líneas:
+
+    9: Creo la variable "sec" que será donde se almacenará la secuencia de caracteres.
+    10: Creo una variable "v" que será el valor de los elementos de la secuencia con el paso del algoritmo.
+    11: Creo un conjunto "vocales".
+    12: Creo una variable "contador" que será para contar cuantas veces "v" NO EN "vocales".
+    15: Utilizo "ARR(sec)" para traer la secuencia de MEM EXTERNA (disco duro) a MEM INTERNA (ram), para poder trabajar con la misma.
+    16: Utilizo "AVZ(sec, v)" para posicionarme en el primer elemento de la secuencia.
+    17: Inicializo la variable "contador" a 0 (cero) para poder trabajar sin problemas. # En caso de que NO inicialice la variable, el algoritmo arrojará error, ya que no podrá interpretar que valor inicial tiene "contador".
+    18: Utilizo un ciclo "REPETIR" ya que el elemento con el que finaliza la secuencia, en este caso "Z" es una consonante, por lo tanto tengo que incluirlo.
+    19: Utilizo un ciclo condicional "SI" para evaluar la condición del valor de la variable "v" si NO EN "vocales" entonces se suma al "contador" un 1. En caso de que "v" EN "vocales" entonces solamente no se sumará nada al "contador".
+    22: El ciclo iterativo "REPETIR" finalizará cuando "v" = "Z".
+    23: Muestro por pantalla los valores del "contador" con un mensaje.
+    24: Por último, cierro la secuencia.
+    
+*/

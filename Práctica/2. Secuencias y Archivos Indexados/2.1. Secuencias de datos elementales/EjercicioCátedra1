@@ -1,20 +1,20 @@
-👨‍💻 Ejercicio 2.1.3 -> ✅ EJERCICIO VERIFICADO POR PROFESOR
+👨‍💻 Ejercicio Propuesto por la Cátedra 1
 
-📖 Enunciado: Se dispone de una secuencia de caracteres y se desea obtener una secuencia de salida que resulte de copiar la secuencia de entrada, descartando el carácter "$".
+📖 Enunciado: Se dispone de una secuencia de números de socios (es una sec de enteros), y grabar en una secuencia de salida los socios con número par que están registrados.
 
 🔗 ALGORITMO 🔗
 
-ACCION ejer2.1.3 ES
+ACCION ejer1 ES
     AMBIENTE
-        sec, sal: Secuencia de caracteres;
-        v: carácter;
+        sec, sal: Secuencia de enteros;
+        v: entero;
     
     PROCESO
         ARR(sec);
         AVZ(sec, v);
         CREAR(sal);
-        MIENTRAS NFDS(sec) HACER
-            SI (v <> "$") ENTONCES
+        MIENTRAS NFDS(sec) ENTONCES
+            SI ((v MOD 2) = 0) ENTONCES
                 GRABAR(sal, v);
             FS;
             AVZ(sec, v);
@@ -26,16 +26,19 @@ FA; /* Fin Accion */
 
 /* 💬 Explicación Algoritmo Líneas:
 
-    9: Creo la variable "sec" que será donde se almacenará la secuencia de caracteres y la variable "sal" donde se copiarán los elementos de la secuencia de entrada pero descartando el carácter "$".
+    9: Creo la variable "sec" que será donde se almacenará la secuencia de enteros y la variable "sal" donde se copiarán los elementos de la secuencia de entrada pero con los socios con número par.
     10: Creo una variable "v" que será el valor de los elementos de la secuencia con el paso del algoritmo.
     13: Utilizo "ARR(sec)" para traer la secuencia de MEM EXTERNA (disco duro) a MEM INTERNA (ram), para poder trabajar con la misma.
     14: Utilizo "AVZ(sec, v)" para posicionarme en el primer elemento de la secuencia.
     15: Utilizo "CREAR(sal)" para crear la secuencia de salida "sal".
     16: Utilizo un ciclo "MIENTRAS" ya que el enunciado no nos da información de un último elemento o marca donde finaliza la secuencia.
-    17: Utilizo un ciclo condicional "SI" para evaluar la condición del valor de la variable "v" <> "$", si es VERDADERO, entonces se GRABA a la secuencia de salida "sal". En caso de que "v" = "$" entonces solamente no se GRABA nada a la secuencia de salida "sal".
+    17: Utilizo un ciclo condicional "SI" para evaluar la condición del valor de la variable "v" MOD 2 = 0, si es VERDADERO, entonces se GRABA a la secuencia de salida "sal". En caso de que "v" MOD 2 != 0 entonces solamente no se GRABA nada a la secuencia de salida "sal".
     20: Utilizo "AVZ(sec, v)" para avanzar al siguiente elemento de la secuencia "sec".
     21: Finalizo el ciclo "MIENTRAS".
     22: Cierro secuencia "sec".
     23: Cierro secuencia salida "sal".
     
+    DATO: MOD es el resto de una división; 2 es el divisor. Ejemplo de operación
+    Si v = 4 -> 4 MOD 2 = 0
+    Si el resto de 4 / 2 = 0, entonces 4 es un número PAR.
 */
