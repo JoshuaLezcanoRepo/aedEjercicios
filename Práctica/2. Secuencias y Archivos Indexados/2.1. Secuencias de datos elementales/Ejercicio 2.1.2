@@ -1,5 +1,7 @@
 👨‍💻 Ejercicio 2.1.2 -> ✅ EJERCICIO VERIFICADO POR PROFESOR
 
+/* Link al ejercicio: https://aed-frre.github.io/practica/2.1/#ejercicio-212 */
+
 📖 Enunciado: Dada una secuencia de letras del alfabeto que finaliza con la letra "Z", contar cuantas consonantes hay en la secuencia.
 
 🔗 ALGORITMO 🔗
@@ -28,17 +30,19 @@ FA; /* Fin Accion */
 
 /* 💬 Explicación Algoritmo Líneas:
 
-    9: Creo la variable "sec" que será donde se almacenará la secuencia de caracteres.
-    10: Creo una variable "v" que será el valor de los elementos de la secuencia con el paso del algoritmo.
-    11: Creo un conjunto "vocales".
-    12: Creo una variable "contador" que será para contar cuantas veces "v" NO EN "vocales".
-    15: Utilizo "ARR(sec)" para traer la secuencia de MEM EXTERNA (disco duro) a MEM INTERNA (ram), para poder trabajar con la misma.
-    16: Utilizo "AVZ(sec, v)" para posicionarme en el primer elemento de la secuencia.
-    17: Inicializo la variable "contador" a 0 (cero) para poder trabajar sin problemas. # En caso de que NO inicialice la variable, el algoritmo arrojará error, ya que no podrá interpretar que valor inicial tiene "contador".
-    18: Utilizo un ciclo "REPETIR" ya que el elemento con el que finaliza la secuencia, en este caso "Z" es una consonante, por lo tanto tengo que incluirlo.
-    19: Utilizo un ciclo condicional "SI" para evaluar la condición del valor de la variable "v" si NO EN "vocales" entonces se suma al "contador" un 1. En caso de que "v" EN "vocales" entonces solamente no se sumará nada al "contador".
-    22: El ciclo iterativo "REPETIR" finalizará cuando "v" = "Z".
-    23: Muestro por pantalla los valores del "contador" con un mensaje.
-    24: Por último, cierro la secuencia.
+    #DATO: Las consonantes son todas las letras del alfabeto excepto las vocales: A, E, I, O, U. Por lo tanto, en el contexto de nuestro algoritmo, las consonantes son todas las letras de la secuencia que no son vocales.
+
+    11: Creamos la variable "sec" para almacenar la secuencia de caracteres.
+    12: Creamos la variable "v" que representará cada elemento de la secuencia durante la ejecución del algoritmo.
+    13: Definimos un conjunto llamado "vocales" que contiene las letras vocales.
+    14: Definimos la variable "contador" que utilizaremos para contar la cantidad de consonantes encontradas.
+    17: Traemos la secuencia de caracteres desde la memoria externa (disco duro) a la memoria interna (RAM) utilizando "ARR(sec)".
+    18: Nos posicionamos en el primer elemento de la secuencia usando "AVZ(sec, v)".
+    19: Inicializamos la variable "contador" a 0 para asegurarnos de que comience en un estado válido antes de usarla.
+    20: Iniciamos un ciclo "REPETIR" ya que necesitamos incluir la última letra "Z", que es una consonante.
+    21: Dentro del ciclo "REPETIR", utilizamos una estructura condicional "SI" para verificar si la letra "v" no está en el conjunto de vocales. Si es así, incrementamos el contador en 1.
+    24: El ciclo "REPETIR" termina cuando encontramos la letra "Z".
+    25: Mostramos por pantalla la cantidad de consonantes encontradas utilizando el contador junto con un mensaje descriptivo.
+    26: Finalmente, cerramos la secuencia usando "CERRAR(sec)".
     
 */

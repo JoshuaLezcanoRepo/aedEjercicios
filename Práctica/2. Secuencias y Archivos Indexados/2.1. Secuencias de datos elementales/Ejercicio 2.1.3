@@ -1,5 +1,7 @@
 👨‍💻 Ejercicio 2.1.3 -> ✅ EJERCICIO VERIFICADO POR PROFESOR
 
+/* Link al ejercicio: https://aed-frre.github.io/practica/2.1/#ejercicio-213 */
+
 📖 Enunciado: Se dispone de una secuencia de caracteres y se desea obtener una secuencia de salida que resulte de copiar la secuencia de entrada, descartando el carácter "$".
 
 🔗 ALGORITMO 🔗
@@ -26,16 +28,16 @@ FA; /* Fin Accion */
 
 /* 💬 Explicación Algoritmo Líneas:
 
-    9: Creo la variable "sec" que será donde se almacenará la secuencia de caracteres y la variable "sal" donde se copiarán los elementos de la secuencia de entrada pero descartando el carácter "$".
-    10: Creo una variable "v" que será el valor de los elementos de la secuencia con el paso del algoritmo.
-    13: Utilizo "ARR(sec)" para traer la secuencia de MEM EXTERNA (disco duro) a MEM INTERNA (ram), para poder trabajar con la misma.
-    14: Utilizo "AVZ(sec, v)" para posicionarme en el primer elemento de la secuencia.
-    15: Utilizo "CREAR(sal)" para crear la secuencia de salida "sal".
-    16: Utilizo un ciclo "MIENTRAS" ya que el enunciado no nos da información de un último elemento o marca donde finaliza la secuencia.
-    17: Utilizo un ciclo condicional "SI" para evaluar la condición del valor de la variable "v" <> "$", si es VERDADERO, entonces se GRABA a la secuencia de salida "sal". En caso de que "v" = "$" entonces solamente no se GRABA nada a la secuencia de salida "sal".
-    20: Utilizo "AVZ(sec, v)" para avanzar al siguiente elemento de la secuencia "sec".
-    21: Finalizo el ciclo "MIENTRAS".
-    22: Cierro secuencia "sec".
-    23: Cierro secuencia salida "sal".
+    11: Creamos dos variables: "sec" para almacenar la secuencia de caracteres de entrada y "sal" para guardar una versión modificada de la secuencia, eliminando el carácter "$".
+    12: Creamos una variable "v" que representa cada elemento de la secuencia durante la ejecución del algoritmo.
+    15: Traemos la secuencia de caracteres desde la memoria externa (disco duro) a la memoria interna (RAM) utilizando "ARR(sec)".
+    16: Nos posicionamos en el primer elemento de la secuencia usando "AVZ(sec, v)".
+    17: Creamos la secuencia llamada "sal" para almacenar la versión modificada de la secuencia original usando "CREAR(sal)".
+    18: Iniciamos un bucle "MIENTRAS" para recorrer la secuencia de entrada. No se especifica una marca de fin o un elemento final, así que continuamos mientras haya elementos en la secuencia.
+    19: Dentro del bucle "MIENTRAS", usamos una estructura condicional "SI" para verificar si el valor de "v" es diferente de "$". Si es así, grabamos el valor de "v" en la secuencia de salida "sal" usando "GRABAR(sal, v)". Si "v" es igual a "$", no hacemos nada.
+    22: Avanzamos al siguiente elemento de la secuencia utilizando "AVZ(sec, v)".
+    23: Finalizamos el bucle "MIENTRAS" después de recorrer toda la secuencia de entrada.
+    24: Cerramos la secuencia de entrada "sec".
+    25: Cerramos la secuencia de salida "sal".
     
 */

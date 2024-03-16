@@ -1,5 +1,7 @@
 👨‍💻 Ejercicio 2.1.1 -> ✅ EJERCICIO VERIFICADO POR PROFESOR
 
+/* Link al ejercicio: https://aed-frre.github.io/practica/2.1/#ejercicio-211 */
+
 📖 Enunciado: Dada una secuencia de letras del alfabeto que finaliza con una marca '*', contar cuantas letras "A" hay en la secuencia.
 
 🔗 ALGORITMO 🔗
@@ -27,18 +29,18 @@ FA;  /* Fin Accion */
 
 /* 💬 Explicación Algoritmo Líneas:
 
-    9: Creo la variable "sec" que será donde se almacenará la secuencia de caracteres.
-    10: Creo una variable "v" que será el valor de los elementos de la secuencia con el paso del algoritmo.
-    11: Creo una variable "contador" que será para contar cuantas veces "v" = "A".
-    14: Utilizo "ARR(sec)" para traer la secuencia de MEM EXTERNA (disco duro) a MEM INTERNA (ram), para poder trabajar con la misma.
-    15: Utilizo "AVZ(sec, v)" para posicionarme en el primer elemento de la secuencia.
-    16: Inicializo la variable "contador" a 0 (cero) para poder trabajar sin problemas. # En caso de que NO inicialice la variable, el algoritmo arrojará error, ya que no podrá interpretar que valor inicial tiene "contador".
-    17: Utilizo un ciclo "MIENTRAS" ya que tengo el elemento o marca donde finaliza la secuencia.
-    18: Utilizo un ciclo condicional "SI" para evaluar la condición del valor de la variable "v" si es = a "A" entonces se suma al "contador" un 1 y así tantas veces aparezca "A" en la secuencia. En caso de que "v" != "A" entonces solamente no se sumará nada al "contador".
-    21: Se avanza al siguiente elemento de la secuencia "sec" con "AVZ(sec, v)".
-    22: Finalizo con un "FIN MIENTRAS" el ciclo "MIENTRAS" ya que llegó al final de la secuencia o a la marca de fin, en este caso "*".
-    23: Muestro por pantalla los valores del "contador" con un mensaje.
-    24: Por último, cierro la secuencia.
+    11: Creamos la variable "sec" para almacenar la secuencia de caracteres.
+    12: Creamos la variable "v" para representar cada elemento de la secuencia durante la ejecución del algoritmo.
+    13: Definimos la variable "contador" para contar cuántas veces aparece la letra "A" en la secuencia.
+    16: Traemos la secuencia de caracteres desde la memoria externa (disco duro) a la memoria interna (RAM) utilizando "ARR(sec)".
+    17: Nos posicionamos en el primer elemento de la secuencia utilizando "AVZ(sec, v)".
+    18: Inicializamos la variable "contador" a 0 para comenzar a contar desde cero.
+    19: Iniciamos un bucle "MIENTRAS" ya que conocemos el carácter que marca el final de la secuencia ("*").
+    20: Dentro del bucle "MIENTRAS", utilizamos una estructura condicional "SI" para verificar si el valor de "v" es igual a "A". Si es así, incrementamos el contador en 1.
+    23: Avanzamos al siguiente elemento de la secuencia utilizando "AVZ(sec, v)".
+    24: Finalizamos el bucle "MIENTRAS" cuando alcanzamos el carácter de fin de secuencia "*".
+    25: Mostramos por pantalla la cantidad de veces que aparece la letra "A" en la secuencia junto con un mensaje descriptivo.
+    26: Por último, cerramos la secuencia.
 
 */
 
@@ -50,21 +52,20 @@ B | A | S | *
 
 /* 
 
-- Viene la secuencia de mem externa a interna y se posiciona en el primer elemento, en este caso el elemento "B".
-Realiza el ciclo mientras <> *, en este caso es VERDADERO (porque el elemento donde estamos posicionados es "B").
-Ahora realiza el ciclo condicional "SI", en este caso es FALSO y no cuenta nada, entonces avanza al siguiente elemento.
+- Se trae la secuencia de la memoria externa a la memoria interna y se posiciona en el primer elemento, que es "B".
+Se inicia el ciclo mientras el elemento actual no sea "*", lo cual es verdadero en este caso.
+Se evalúa el ciclo condicional "SI", que es falso ya que el elemento actual no es "A". Por lo tanto, no se cuenta nada y se avanza al siguiente elemento.
 
-- Ahora el elemento donde está posionado "V" es el carácter "A".
-Realiza el ciclo mientras <> *, en este caso es VERDADERO (porque el elemento donde estamos posicionados es "A").
-Ahora realiza el ciclo condicional "SI", en este caso es VERDADERO porque se cumple la condición, por lo tanto se suma al contador y se avanza al siguiente elemento.
+- Ahora el elemento actual es "A".
+Se continúa el ciclo mientras el elemento actual no sea "*", lo cual sigue siendo verdadero.
+Se evalúa el ciclo condicional "SI", que es verdadero porque el elemento actual es "A". Se suma 1 al contador y se avanza al siguiente elemento.
 
-- Ahora el elemento donde está posionado "V" es el carácter "S".
-Realiza el ciclo mientras <> *, en este caso es VERDADERO (porque el elemento donde estamos posicionados es "S").
-Ahora realiza el ciclo condicional "SI", en este caso es FALSO y no cuenta nada, entonces avanza al siguiente elemento.
+- El siguiente elemento es "S".
+Se repiten los pasos anteriores, pero como "S" no es "A", no se cuenta nada y se avanza al siguiente elemento.
 
-- Ahora el elemento donde está posionado "V" es el carácter "*".
-Realiza el ciclo mientras <> *, en este caso es FALSO (porque el elemento donde estamos posicionados es "*") y por lo tanto, quiere decir que se llegó al final de la secuencia y no se realiza ningún tipo de operación.
+- El último elemento es "*".
+Se comprueba si es diferente de "*", lo cual es falso, lo que indica que se ha llegado al final de la secuencia y no se realiza ninguna operación adicional.
 
-En total, el contador será = 1, ya que existen un carácter A en la secuencia y se cerrará en la marca final de la secuencia.
+En total, el contador será igual a 1, ya que solo hay un carácter "A" en la secuencia. Se cierra el proceso al llegar al final de la secuencia.
 
 */
