@@ -1,0 +1,27 @@
+👨‍💻 Ejercicio Propuesto por la Cátedra 2 -> ✅ EJERCICIO VERIFICADO POR PROFESOR
+
+📖 Enunciado: Se tiene una secuencia de enteros que contiene los números de teléfono de los clientes de una empresa,cada número tiene 10 dígitos. La empresa necesita organizar los clientes de acuerdo al último dígito de su número telefónico, generar una secuencia con los números de las personas que termine con 5, 6 o 7.
+
+🔗 ALGORITMO 🔗
+
+ACCION ejer2 ES
+    AMBIENTE
+        sec, sal: Secuencia de enteros;
+        v, ultimoDigito: Entero;
+        valores = {5, 6, 7};
+    
+    PROCESO
+        ARR(sec);
+        AVZ(sec, v);
+        CREAR(sal);
+        MIENTRAS NFDS(sec) HACER
+            ultimoDigito:= v MOD 10;
+            SI (ultimoDigito EN valores) ENTONCES
+                GRABAR(sal, v);
+            FS;
+            AVZ(sec, v);
+        FM;
+        CERRAR(sec);
+        CERRAR(sal);
+    FP;
+FA;

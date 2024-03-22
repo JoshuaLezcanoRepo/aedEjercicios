@@ -5,3 +5,9 @@ ARR(sec);
 
 Y al traer la secuencia de MEMORIA EXTERNA a INTERNA, debemos de ubicarnos en el primer elemento de la misma, con lo cuál utilizamos:
 AVZ(sec, v);
+
+En la secuencia de la fila 1 de enteros de 10 dígitos sería:
+| 238583929 | 5848727229 |
+
+En la secuencia de la fila 2 de caracteres de 10 dígitos sería:
+| 2 | 6 | 8 | 7 | 1 | 9 | 0 | 4 | 3 | 5 |

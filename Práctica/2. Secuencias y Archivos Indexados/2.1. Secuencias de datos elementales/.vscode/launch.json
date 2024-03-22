@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "c:/Users/joshu/Downloads/Ejercicios AyED/Práctica/2. Secuencias y Archivos Indexados/2.1. Secuencias de datos elementales",
+      "program": "c:/Users/joshu/Downloads/Ejercicios AyED/Práctica/2. Secuencias y Archivos Indexados/2.1. Secuencias de datos elementales/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

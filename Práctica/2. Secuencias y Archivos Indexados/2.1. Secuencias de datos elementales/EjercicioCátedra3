@@ -1,0 +1,34 @@
+👨‍💻 Ejercicio Propuesto por la Cátedra 3 -> ✅ EJERCICIO VERIFICADO POR PROFESOR
+
+📖 Enunciado: Se tiene una secuencia de caracteres que contiene los numeros de telefono de los clientes de una empresa, cada número tiene 10 dígitos. La empresa necesita organizar los clientes de acuerdo al último dígito de su número telefónico, generar una secuencia con los números de las personas que inician en un número ingresado por usuario.
+
+🔗 ALGORITMO 🔗
+
+ACCION ejer3 ES
+    AMBIENTE
+        sec, sal: Secuencia de caracteres;
+        v, nroUsuario: Carácter;
+        i: Entero;
+    
+    PROCESO
+        ARR(sec);
+        AVZ(sec, v);
+        CREAR(sal);
+        i:= 0;
+        ESC("Ingrese el primer número de un teléfono");
+        LEER(nroUsuario);
+        MIENTRAS NFDS(sec) HACER
+            SI (nroUsuario = v) ENTONCES
+                PARA (i:= 1 HASTA 10) HACER
+                    GRABAR(sal, v);
+                    AVZ(sec, v);
+                FP;
+            SINO
+                PARA (i:= 1 HASTA 10) HACER
+                    AVZ(sec, v);
+                FP;
+        FM;
+        CERRAR(sec);
+        CERRAR(sal);
+    FP;
+FA;
