@@ -1,0 +1,72 @@
+👨‍💻 Ejercicio Propuesto por la Cátedra 8 -> ➡️ EJERCICIO TODAVIA NO VERIFICADO POR PROFESOR
+
+📖 Enunciado: Finalizando el ciclo lectivo 2023 de algoritmos, se necesitan estadísticas sobre cuántos aprobaron de manera directa la materia, aprobaron la cursada (regularizar), o quedaron libres. para definir la situación de cada estudiante se debe contabilizar la cantidad de aprobados. De seis instancias evaluativas, se define:
+
+- Aprobación directa (promoción) 6 instancias aprobadas
+- Aprobación de cursada (regular) 4 instancias aprobadas
+- Libre menos de 4 instancias aprobadas
+
+Se pide informar cuantos estudiantes alcanzaron la condición de aprobación directa ( o puede ser el numero de cada condición)
+
+Los resultados de cada estudiante se encuentra en una secuencia de caracteres con el siguiente formato:
+
+| NombreAlumno | Legajo | nrodeaprobados | #
+ejemplo: JuanPerez271116#MariaLopez288882#*
+
+Legajo: 5 caracteres
+Nro de Aprobados: 1 caracter
+Marca de fin: *
+Marca de separacion: #
+
+🔗 ALGORITMO 🔗
+
+ACCION ejer8 ES
+    AMBIENTE
+        sec: Secuencia de caracteres;
+        v: caracter;
+        nroAprobado, cont: entero;
+
+        SUBACCION inicializarVariables ES
+            ARR(sec);
+            AVZ(sec, v);
+            i:= 0;
+            nroAprobado:= 0;
+            cont:= 0;
+        FS;
+
+        FUNCION convertirCar(c: caracter): entero ES
+            SEGUN c hacer
+                ="0": convertirCar:= 0;
+                ="1": convertirCar:= 1;
+                ="2": convertirCar:= 2;
+                ="3": convertirCar:= 3;
+                ="4": convertirCar:= 4;
+                ="5": convertirCar:= 5;
+                ="6": convertirCar:= 6;
+                ="7": convertirCar:= 7;
+                ="8": convertirCar:= 8;
+                ="9": convertirCar:= 9;
+            FS;
+        FF;
+
+    PROCESO
+        inicializarVariables();
+        MIENTRAS NFDS (sec) HACER
+            MIENTRAS (v <> "*") HACER
+                MIENTRAS (v <> "#") HACER
+                    // tendria que avanzar el nombre
+                    // Avanzo Legajo
+                    PARA (i:= 1 HASTA 5) HACER
+                        AVZ(sec, v);
+                    FP;
+                    nroAprobado:= convertirCar(v);
+                    SI (nroAprobado = 6) ENTONCES
+                        cont:= cont + 1;
+                    FS;
+                FM;
+            FM;
+        FM;
+        ESC("La cantidad de estudiantes que alcanzaron la condición de aprobación directa es de: ", cont);
+        CERRAR(sec);
+    FP;
+FA;

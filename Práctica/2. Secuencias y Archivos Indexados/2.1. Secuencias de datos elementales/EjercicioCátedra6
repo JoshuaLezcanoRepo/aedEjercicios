@@ -1,0 +1,55 @@
+👨‍💻 Ejercicio Propuesto por la Cátedra 6 -> ➡️ EJERCICIO TODAVIA NO VERIFICADO POR PROFESOR
+
+📖 Enunciado: Dada una secuencia de caracteres que posee las ventas realizadas de un determinado producto, se pide contabilizar en cuantas transacciones se vendieron mas de 3 unidades. como máximo se pueden comprar 9.
+La información de las ventas en la secuencia sigue el siguiente formato: fechaVentaCantidadVendida
+
+Ejemplo: 010220236210320242150220247230220241
+
+La fecha siempre tiene 8 caracteres y un solo carácter para las unidades vendidas, no hay una marca que separe cada venta. 
+Para el ejemplo la salida esperada sería: hay dos ventas con más de 3 unidades.
+
+🔗 ALGORITMO 🔗
+
+ACCION ejer6 ES
+    AMBIENTE
+        sec: secuencia de caracteres;
+        v: caracter;
+        cont, i, nroConvertido: entero;
+        
+        SUBACCION inicializarVariables ES
+            ARR(sec);
+            AVZ(sec, v);
+            cont:= 0;
+            i:= 0;
+            nroConvertido:= 0;
+        FS;
+
+        FUNCION convertirCar(c: caracter): entero ES
+            SEGUN c hacer
+                ="0": convertirCar:= 0;
+                ="1": convertirCar:= 1;
+                ="2": convertirCar:= 2;
+                ="3": convertirCar:= 3;
+                ="4": convertirCar:= 4;
+                ="5": convertirCar:= 5;
+                ="6": convertirCar:= 6;
+                ="7": convertirCar:= 7;
+                ="8": convertirCar:= 8;
+                ="9": convertirCar:= 9;
+            FS;
+        FF;
+
+    PROCESO
+        inicializarVariables();
+        MIENTRAS NFDS(sec) HACER
+            PARA (i:= 1 HASTA 8) HACER
+                AVZ(sec, v);
+            FP;
+            nroConvertido:= convertirCar(v);
+            SI (nroConvertido > 3) ENTONCES
+                cont:= cont + 1;
+            FS;
+        FM;
+        CERRAR(sec);
+    FP;
+FA;
