@@ -1,0 +1,53 @@
+👨‍💻 Ejercicio Propuesto por la Cátedra 7 -> ➡️ EJERCICIO TODAVIA NO VERIFICADO POR PROFESOR
+
+📖 Enunciado: Dada una secuencia de caracteres que contiene palabras, se pide informar cuantas palabras tienen más de 5 caracteres.
+
+🔗 ALGORITMO 🔗
+
+ACCION ejer7 ES
+    AMBIENTE
+        sec: secuencia de caracteres;
+        v: caracter;
+        palabras: entero,
+        
+        SUBACCION inicializarVariables ES
+            ARR(sec);
+            AVZ(sec, v);
+            palabras:= 0;
+        FS;
+
+        // FUNCION convertirCar(c: caracter): entero ES
+        //     SEGUN c hacer
+        //         ="0": convertirCar:= 0;
+        //         ="1": convertirCar:= 1;
+        //         ="2": convertirCar:= 2;
+        //         ="3": convertirCar:= 3;
+        //         ="4": convertirCar:= 4;
+        //         ="5": convertirCar:= 5;
+        //         ="6": convertirCar:= 6;
+        //         ="7": convertirCar:= 7;
+        //         ="8": convertirCar:= 8;
+        //         ="9": convertirCar:= 9;
+        //     FS;
+        // FF;
+
+    PROCESO
+        inicializarVariables();
+        MIENTRAS NFDS(sec) HACER
+            MIENTRAS (v <> ".") HACER
+                MIENTRAS (v <> " ") HACER
+                    AVZ(sec, v);
+                FM;
+                MIENTRAS (v = " ") HACER
+                    palabras:= palabras + 1;
+                    SI (palabras > 5) ENTONCES
+                        palabrasMayores:= palabras + 1;
+                    FS;
+                    palabras:= 0;
+                FM;
+            FM;
+        FM;
+        ESC("La cantidad de palabras mayores a 5 caracteres son: ", palabrasMayores);
+        CERRAR(sec);
+    FP;
+FA;

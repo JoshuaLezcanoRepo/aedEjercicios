@@ -1,0 +1,121 @@
+Las secuencias se encuentran inicialmente en MEMORIA EXTERNA (disco duro) y se guarda al finalizar el algoritmo nuevamente en MEMORIA EXTERNA (disco duro) al realizar la acción de GRABAR(sec, v);
+
+Para trabajar con secuencias, se debe de traer de MEMORIA EXTERNA a MEMORIA INTERNA (ram), con lo cuál, para realizar esa acción, utilizamos
+ARR(sec);
+
+Y al traer la secuencia de MEMORIA EXTERNA a INTERNA, debemos de ubicarnos en el primer elemento de la misma, con lo cuál utilizamos:
+AVZ(sec, v);
+
+En la secuencia de la fila 1 de enteros de 10 dígitos sería:
+| 238583929 | 5848727229 |
+
+En la secuencia de la fila 2 de caracteres de 10 dígitos sería:
+| 2 | 6 | 8 | 7 | 1 | 9 | 0 | 4 | 3 | 5 |
+
+// Cosas que sirven
+
+FUNCION charToInt(n: CARACTER): ENTERO ES
+    SEGUN (n) HACER
+        ='1': charToInt:= 1;
+        ='2': charToInt:= 2;
+        ='3': charToInt:= 3;
+        ='4': charToInt:= 4;
+        ='5': charToInt:= 5;
+        ='6': charToInt:= 6;
+        ='7': charToInt:= 7;
+        ='8': charToInt:= 8;
+        ='9': charToInt:= 9;
+        ='0': charToInt:= 0;
+    FS;
+FF;
+
+// Sumar numeros de caracter a entero pero con separados
+Ejemplo: '432'
+
+num1 = num1 + (charToInt(v) * 100);
+AVZ(sec, v);
+num2 = num2 + (charToInt(v) * 10);
+AVZ(sec, v);
+num3 = num3 + charToInt(v);
+AVZ(sec, v);
+numTotal:= num1 + num2 + num3; // 432 en entero
+
+Ejemplo '92'
+
+num1 = num1 + (charToInt(v) * 10);
+AVZ(sec, v);
+num2 = num2 + charToInt(v);
+AVZ(sec, v);
+
+Ejemplo '092'
+num1 = num1 + (charToInt(v) * 100);
+AVZ(sec, v);
+num2 = num2 + (charToInt(v) * 10);
+AVZ(sec, v);
+num3 = num3 + charToInt(v);
+AVZ(sec, v);
+numTotal:= num1 + num2 + num3;
+
+// -------------------------------
+// En cortes, asignar fecha como aaaa, mm, dd
+formatoFecha = REGISTRO
+    aaaa: N(4);
+    dd: N(2);
+    aa: N(2);
+FR;
+
+ejemplo = REGISTRO
+    fecha: formatoFecha;
+    ..
+    ..
+FR;
+
+// En caso de que el usuario deba de ingresar fecha
+ESC('Ingrese una fecha, en este orden: dia, mes, año');
+LEER(fechaUsuario.dd, fechaUsuario.mm, fechaUsuario.aaaa);
+
+// Y se compara directamente (< o > o <> o =)
+SI (fechaUsuario < reg.fecha) ENTONCES
+    ...
+    ...
+FS;
+
+// Promedios, Porcentajes
+promedio := cantDeAlgo / cantTotal
+porcentaje := cantDeAlgo * 100 / (cantTotal);
+
+// Numero par o impar
+SI (num1 MOD 2 = 0) ENTONCES
+    ESC("El numero es par")
+SINO
+    ESC("El numero no es par)
+FS;
+
+
+Cuando dice "Listado" solamente se imprime por pantalla "v"
+ESC(v)
+
+convertir un caracter a entero
+
+Funcion convertir_car_a_ent(x:caracter):entero es
+    Segun x hacer 
+        = "0" : convertir_car_a_ent := 0
+        = "1" : convertir_car_a_ent := 1
+        = "2" : convertir_car_a_ent := 2
+        = "3" : convertir_car_a_ent := 3
+        = "4" : convertir_car_a_ent := 4
+        = "5" : convertir_car_a_ent := 5
+        = "6" : convertir_car_a_ent := 6
+        = "7" : convertir_car_a_ent := 7
+        = "8" : convertir_car_a_ent := 8
+        = "9" : convertir_car_a_ent := 9
+    Fin Segun 
+fin Funcion
+
+FUNCION esPar (x:entero):bool ES   // esta funcion recibe de entrada un entero y devuelve un booleano como salida
+   Si x MOD 2 = 0 entonces 
+      esPar := Verdadero
+   sino
+      esPar:= Falso
+   fin si
+fin FUNCION

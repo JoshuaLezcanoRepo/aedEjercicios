@@ -1,0 +1,136 @@
+👨‍💻 Ejercicio 2.1.28 -> ➡️ EJERCICIO TODAVIA NO VERIFICADO POR PROFESOR
+
+📖 Enunciado: La galería de pintura y arte nacional, PINTA DE ARGENTINA, almacena información sobre los artistas y sus obras de arte en secuencias de caracteres. Durante todo el año, las obras de arte son expuestas en eventos de subasta y exposición, en los cuales se comercializan al público en general.
+A fin de año la Comisión Directiva de la Galería solicita que, a partir de toda esa información, se generen algunos informes. Se debe tener en cuenta lo siguiente:
+
+En la secuencia ARTISTAS, se almacena:
+
+- El estilo de arte ('R' – Renacentista, 'M' – Arte Moderno, 'B' – Barroco, 'S' – Surrealismo)
+- El nombre de cada artista, lugar de nacimiento, edad y cantidad de obras por artista.
+
+# Los datos de cada artista están separados entre si por el símbolo '+' y finalizan con el símbolo '?'.
+
+En la secuencia OBRAS, se almacena:
+- El nombre de la obra, el año en que fue hecha, su precio, precedido siempre del signo '$' (solo 3 digitos) y su estado ('V' – Vendido, 'R' – Reservado, 'U' – Obra Única).
+
+# Todos los datos de las obras están separados por el símbolo ',' y finalizan con el símbolo '/'.
+
+El creador de cada obra se determina de acuerdo al dato 'cantidad de obras' de la secuencia ARTISTAS, por ej.: el autor RENE BARTOL tiene 2 obras, por lo cual las primeras 2 obras de la secuencia OBRAS le pertenecen, las siguientes 6, pertenecen a JUAN B JUSTO, etc.
+
+A continuación un ejemplo de ambas secuencias:
+
+SECUENCIA ARTISTAS
+M+RENE BARTOL+ROSARIO+34+2?R+JUAN B JUSTO+NEUQUEN+61+5?……..
+
+SECUENCIAS OBRAS
+SOL Y PARANA,1997,$913,V/GRITO DE ESPERANZA,2003,$235,R/PENAS,1997,$781,V/………
+
+A partir de lo expuesto anteriormente, se pide:
+
+Generar una secuencia de salida con información de los artistas Renacentistas. La secuencia debe contener el nombre del artista, su estilo de arte, seguido de sus obras (nombre y año de creación). Los datos correspondientes al mismo artista deben separarse entre sí con el signo '+' y finalizar con el signo '?'.
+
+Al final del proceso informar:
+    - la mayor cantidad de obras vendidas por un artista.
+    - el porcentaje de obras de artistas "renacentistas" sobre el total de obras.
+
+🔗 ALGORITMO 🔗
+
+ACCION ejer2.1.28 ES
+    AMBIENTE
+        secArtistas, secObras, sal: Secuencia de caracteres;
+        vArtistas, vObras: caracter;
+        i, resCantidadObras, cantObrasRen: entero;
+
+        SUBACCION inicializarVariables ES
+            ARR(secArtistas);
+            ARR(secObras);
+            AVZ(secArtistas, vArtistas);
+            AVZ(secObras, vObras);
+            i:= 0;
+            resCantidadObras:= 0;
+            cantObrasRen:= 0;
+        FS;
+
+        FUNCION convertirCar(c: caracter): entero ES
+            SEGUN c hacer
+                ="0": convertirCar:= 0;
+                ="1": convertirCar:= 1;
+                ="2": convertirCar:= 2;
+                ="3": convertirCar:= 3;
+                ="4": convertirCar:= 4;
+                ="5": convertirCar:= 5;
+                ="6": convertirCar:= 6;
+                ="7": convertirCar:= 7;
+                ="8": convertirCar:= 8;
+                ="9": convertirCar:= 9;
+            FS;
+        FF;
+
+    PROCESO
+        inicializarVariables();
+        MIENTRAS NFDS(secArtistas) ^ NFDS(secObras) HACER
+            MIENTRAS (vArtistas <> "?") ^ (vObras <> "/") HACER
+                SI (vArtistas = "R") ENTONCES
+                    AVZ(secArtistas, vArtistas); // Avanzo estilo de arte
+                    AVZ(secArtistas, vArtistas); // Avanzo "+"
+                    MIENTRAS (vArtistas <> "+") HACER
+                        GRABAR(sal, vArtistas);
+                        AVZ(secArtistas, vArtistas);
+                    FM;
+                    GRABAR(sal, "+");
+                    GRABAR(sal, "Renacentista");
+                    GRABAR(sal, "+");
+                    // Total de obras renacentistas - Estoy parado en el "+" después del nombre del artista
+                    AVZ(secArtistas, vArtistas);
+                    PARA (i:= HASTA 2) HACER
+                        MIENTRAS (vArtistas <> "+") HACER
+                            AVZ(secArtistas, vArtistas);
+                        FM;
+                        AVZ(secArtistas, vArtistas);
+                    FP;
+                    AVZ(secArtistas, vArtistas); // Avanzo "+" antes de la cantidad de obras
+                    resCantidadObras:= convertirCar(vArtistas);
+                    PARA (i:= 1 HASTA resCantidadObras) HACER
+                        MIENTRAS (vObras <> ",") HACER
+                            GRABAR(sal, vObras);
+                            AVZ(secObras, vObras);
+                        FM;
+                        GRABAR(sal, "+");
+                        AVZ(secObras, vObras); // Avanzo ","
+                        MIENTRAS (vObras <> ",") HACER
+                            GRABAR(sal, vObras);
+                            AVZ(secObras, vObras);
+                        FM;
+                        GRABAR(sal, "?");
+                    FP;
+                    cantObrasRen:= cantObrasRen + resCantidadObras;
+                SINO
+                    SEGUN vObras HACER
+                        ="0": convertirCar:= 0;
+                        ="1": convertirCar:= 1;
+                        ="2": convertirCar:= 2;
+                        ="3": convertirCar:= 3;
+                        ="4": convertirCar:= 4;
+                        ="5": convertirCar:= 5;
+                        ="6": convertirCar:= 6;
+                        ="7": convertirCar:= 7;
+                        ="8": convertirCar:= 8;
+                        ="9": convertirCar:= 9;
+                    FS;
+                    PARA (i:= 1 HASTA 4) HACER
+                        AVZ(secArtistas, vArtistas);
+                    FP;
+                    AVZ(secArtistas, vArtistas); // Avanzo "+" - Parado en la cantidad de obras
+                    resCantidadObras:= convertirCar(vArtistas);
+                    PARA (i:= 1 HASTA 3) HACER
+                        AVZ(secObras, vObras);
+                    FP;
+                    AVZ(secObras, vObras); // Avanzo "," - Parado en el estado de la obra
+                    SI (vObras = "V") ENTONCES
+                        obrasVendidas:= obrasVendidas + 1;
+                    FS;
+                FS;
+            FM;
+        FM;
+    FP;
+FA;

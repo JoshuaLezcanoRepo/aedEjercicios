@@ -1,0 +1,50 @@
+👨‍💻 Ejercicio 2.1.15 -> ✅ EJERCICIO VERIFICADO POR PROFESOR
+
+/* Link al ejercicio: https://aed-frre.github.io/complementarios/2.1/#ejercicio-2115 */
+
+📖 Enunciado: Dada una secuencia de caracteres de entrada, desarrollar un algoritmo que produzca dos secuencias de salida de caracteres. La primera secuencia de salida contendrá los caracteres numéricos pares y la segunda secuencia de salida contendrá los caracteres numéricos impares. Al final del proceso calcular e informar el porcentaje de caracteres numéricos pares e impares sobre el total de caracteres numéricos.
+
+🔗 ALGORITMO 🔗
+
+ACCION ejer2.1.15 ES
+    AMBIENTE
+        sec, salPar, salImpar: Secuencia de caracteres;
+        v: carácter;
+        par = {"0", "2", "4", "6", "8"};
+        impar = {"1", "3", "5", "7", "9"};
+        porcentajePar, porcentajeImpar, total, par, impar: entero;
+
+        SUBACCION inicializarVariables ES
+            ARR(sec);
+            AVZ(sec, v);
+            CREAR(salPar);
+            CREAR(salImpar);
+            porcentajePar:= 0;
+            porcentajeImpar:= 0;
+            par:= 0;
+            impar:= 0;
+            total:= 0;
+        FS;
+
+    PROCESO
+        inicializarVariables();
+        MIENTRAS NFDS(sec) HACER
+            SI (v EN par) ENTONCES
+                GRABAR(salPar, v);
+                par:= par + 1;
+            SINO (v EN impar) ENTONCES
+                GRABAR(salImpar, v);
+                impar:= impar + 1;
+            FS;
+            AVZ(sec, v);
+        FM;
+        total:= par + impar;
+        porcentajePar:= ((par * 100) / total);
+        porcentajeImpar:= ((impar * 100) / total);
+        ESC("El porcentaje de nros pares es de: ", porcentajePar);
+        ESC("El porcentaje de nros impares es de: ", porcentajeImpar);
+        CERRAR(sec);
+        CERRAR(salPar);
+        CERRAR(salImpar);
+    FP;
+FA;

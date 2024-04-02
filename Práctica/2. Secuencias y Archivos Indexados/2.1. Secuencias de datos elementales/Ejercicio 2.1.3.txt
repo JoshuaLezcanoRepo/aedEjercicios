@@ -1,0 +1,43 @@
+👨‍💻 Ejercicio 2.1.3 -> ✅ EJERCICIO VERIFICADO POR PROFESOR
+
+/* Link al ejercicio: https://aed-frre.github.io/practica/2.1/#ejercicio-213 */
+
+📖 Enunciado: Se dispone de una secuencia de caracteres y se desea obtener una secuencia de salida que resulte de copiar la secuencia de entrada, descartando el carácter "$".
+
+🔗 ALGORITMO 🔗
+
+ACCION ejer2.1.3 ES
+    AMBIENTE
+        sec, sal: Secuencia de caracteres;
+        v: carácter;
+    
+    PROCESO
+        ARR(sec);
+        AVZ(sec, v);
+        CREAR(sal);
+        MIENTRAS NFDS(sec) HACER
+            SI (v <> "$") ENTONCES
+                GRABAR(sal, v);
+            FS;
+            AVZ(sec, v);
+        FM; /* Fin Mientras */
+        CERRAR(sec);
+        CERRAR(sal);
+    FP; /* Fin Proceso */
+FA; /* Fin Accion */
+
+/* 💬 Explicación Algoritmo Líneas:
+
+    11: Creamos dos variables: "sec" para almacenar la secuencia de caracteres de entrada y "sal" para guardar una versión modificada de la secuencia, eliminando el carácter "$".
+    12: Creamos una variable "v" que representa cada elemento de la secuencia durante la ejecución del algoritmo.
+    15: Traemos la secuencia de caracteres desde la memoria externa (disco duro) a la memoria interna (RAM) utilizando "ARR(sec)".
+    16: Nos posicionamos en el primer elemento de la secuencia usando "AVZ(sec, v)".
+    17: Creamos la secuencia llamada "sal" para almacenar la versión modificada de la secuencia original usando "CREAR(sal)".
+    18: Iniciamos un bucle "MIENTRAS" para recorrer la secuencia de entrada. No se especifica una marca de fin o un elemento final, así que continuamos mientras haya elementos en la secuencia.
+    19: Dentro del bucle "MIENTRAS", usamos una estructura condicional "SI" para verificar si el valor de "v" es diferente de "$". Si es así, grabamos el valor de "v" en la secuencia de salida "sal" usando "GRABAR(sal, v)". Si "v" es igual a "$", no hacemos nada.
+    22: Avanzamos al siguiente elemento de la secuencia utilizando "AVZ(sec, v)".
+    23: Finalizamos el bucle "MIENTRAS" después de recorrer toda la secuencia de entrada.
+    24: Cerramos la secuencia de entrada "sec".
+    25: Cerramos la secuencia de salida "sal".
+    
+*/

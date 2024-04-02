@@ -1,0 +1,71 @@
+👨‍💻 Ejercicio 2.1.1 -> ✅ EJERCICIO VERIFICADO POR PROFESOR
+
+/* Link al ejercicio: https://aed-frre.github.io/practica/2.1/#ejercicio-211 */
+
+📖 Enunciado: Dada una secuencia de letras del alfabeto que finaliza con una marca '*', contar cuantas letras "A" hay en la secuencia.
+
+🔗 ALGORITMO 🔗
+
+ACCION ejer2.1.1 ES
+    AMBIENTE
+        sec: Secuencia de caracteres;
+        v: carácter;
+        contador: entero;
+    
+    PROCESO
+        ARR(sec);
+        AVZ(sec, v);
+        contador:= 0;
+        MIENTRAS (v <> "*") HACER
+            SI (v = "A") ENTONCES
+                contador:= contador + 1;
+            FS;
+            AVZ(sec, v);
+        FM; /* Fin Mientras */
+        ESC("La cantidad de letras A que existen en esta secuencia es: ", contador);
+        CERRAR(sec);
+    FP; /* Fin Proceso */
+FA;  /* Fin Accion */
+
+/* 💬 Explicación Algoritmo Líneas:
+
+    11: Creamos la variable "sec" para almacenar la secuencia de caracteres.
+    12: Creamos la variable "v" para representar cada elemento de la secuencia durante la ejecución del algoritmo.
+    13: Definimos la variable "contador" para contar cuántas veces aparece la letra "A" en la secuencia.
+    16: Traemos la secuencia de caracteres desde la memoria externa (disco duro) a la memoria interna (RAM) utilizando "ARR(sec)".
+    17: Nos posicionamos en el primer elemento de la secuencia utilizando "AVZ(sec, v)".
+    18: Inicializamos la variable "contador" a 0 para comenzar a contar desde cero.
+    19: Iniciamos un bucle "MIENTRAS" ya que conocemos el carácter que marca el final de la secuencia ("*").
+    20: Dentro del bucle "MIENTRAS", utilizamos una estructura condicional "SI" para verificar si el valor de "v" es igual a "A". Si es así, incrementamos el contador en 1.
+    23: Avanzamos al siguiente elemento de la secuencia utilizando "AVZ(sec, v)".
+    24: Finalizamos el bucle "MIENTRAS" cuando alcanzamos el carácter de fin de secuencia "*".
+    25: Mostramos por pantalla la cantidad de veces que aparece la letra "A" en la secuencia junto con un mensaje descriptivo.
+    26: Por último, cerramos la secuencia.
+
+*/
+
+⚙️ PRUEBA DE ESCRITORIO
+------------------------
+
+Supongamos que la secuencia es la siguiente:
+B | A | S | * 
+
+/* 
+
+- Se trae la secuencia de la memoria externa a la memoria interna y se posiciona en el primer elemento, que es "B".
+Se inicia el ciclo mientras el elemento actual no sea "*", lo cual es verdadero en este caso.
+Se evalúa el ciclo condicional "SI", que es falso ya que el elemento actual no es "A". Por lo tanto, no se cuenta nada y se avanza al siguiente elemento.
+
+- Ahora el elemento actual es "A".
+Se continúa el ciclo mientras el elemento actual no sea "*", lo cual sigue siendo verdadero.
+Se evalúa el ciclo condicional "SI", que es verdadero porque el elemento actual es "A". Se suma 1 al contador y se avanza al siguiente elemento.
+
+- El siguiente elemento es "S".
+Se repiten los pasos anteriores, pero como "S" no es "A", no se cuenta nada y se avanza al siguiente elemento.
+
+- El último elemento es "*".
+Se comprueba si es diferente de "*", lo cual es falso, lo que indica que se ha llegado al final de la secuencia y no se realiza ninguna operación adicional.
+
+En total, el contador será igual a 1, ya que solo hay un carácter "A" en la secuencia. Se cierra el proceso al llegar al final de la secuencia.
+
+*/

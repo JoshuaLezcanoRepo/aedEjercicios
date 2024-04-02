@@ -1,0 +1,68 @@
+👨‍💻 Ejercicio 2.1.27 -> ✅ EJERCICIO VERIFICADO POR PROFESOR
+
+/* Link al ejercicio: https://aed-frre.github.io/practica/2.1/#ejercicio-2127 */
+
+📖 Enunciado: Elaborar un procedimiento que dada una secuencia de caracteres como entrada genere otra del mismo tipo como salida.
+La secuencia de caracteres que se recibe incluye números de tarjetas de crédito, donde cada número tiene 16 dígitos. Se desea obtener como resultado una nueva secuencia de salida con los números de tarjetas válidos.
+
+El algoritmo para la validación de números de tarjetas de crédito es el siguiente:
+
+Para entender mejor el método usaremos un número correcto: 4013-7001-0977-4812, al que nos referiremos en el texto. Nos centramos en los caracteres que ocupan posiciones impares.
+
+4 0 1 3 7 0 0 1 0 9 7 7 4 8 1 2
+_   _   _   _   _   _   _   _
+
+Por cada uno de ellos obtenemos el doble del valor que representan. Si el número resultante es menor que 9, se deja tal cual, en caso contrario, se le resta 9. En nuestro ejemplo: 4 * 2 = 8; 1 * 2 = 2; 7 * 2 = 14, mayor que nueve, se le resta 9. 14 - 9 = 5; y así sucesivamente. Si el número resultante de la suma de las multiplicaciones y de los dígitos en posición par, es múltiplo de 10, y a la vez menor o igual a 150, es un número de tarjeta válido.
+
+Para nuestro ejemplo: 8+0+2+3+5+0+0+1+0+9+5+7+8+8+2+2 = 60; por lo tanto el número es válido.
+
+🔗 ALGORITMO 🔗
+
+ACCION ejer2.1.27 ES
+    AMBIENTE
+        sec, sal: Secuencia de caracteres;
+        v: caracter;
+        resNro, nroValido, cont: entero;
+
+        SUBACCION inicializarVariables ES
+            ARR(sec);
+            AVZ(sec, v);
+            CREAR(sal);
+            resNro:= 0;
+            nroValido:= 0;
+        FS;
+
+        FUNCION convertirCar(c: caracter): entero ES
+            SEGUN c hacer
+                ="0": convertirCar:= 0;
+                ="1": convertirCar:= 1;
+                ="2": convertirCar:= 2;
+                ="3": convertirCar:= 3;
+                ="4": convertirCar:= 4;
+                ="5": convertirCar:= 5;
+                ="6": convertirCar:= 6;
+                ="7": convertirCar:= 7;
+                ="8": convertirCar:= 8;
+                ="9": convertirCar:= 9;
+            FS;
+        FF;
+
+    PROCESO
+        inicializarVariables();
+        MIENTRAS NFDS(sec) HACER
+            PARA (i:= 1 HASTA 16) HACER
+                resNro:= convertirCar(v) * 2;
+                SI (resNro > 9) ENTONCES
+                    nroValido:= resNro - 9;
+                    GRABAR(sal, nroValido);
+                    cont:= cont + 1;
+                SINO
+                    GRABAR(sal, resNro);
+                FS;
+                AVZ(sec, v); // Avanzo Primer Digito, estoy en el 2 digito - posicion par
+                GRABAR(sal, v);
+                AVZ(sec, v); // Avanzo 2 digito, estoy en el 3er digito - posicion impar
+            FP;
+        FM;
+    FP;
+FA;
